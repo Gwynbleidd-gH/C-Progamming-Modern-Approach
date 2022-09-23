@@ -3,7 +3,7 @@
 
 int main()
 {
-  int repeated_digits[10] = { 0 };
+	int repeated_digits[10] = { 0 };
 	int number;
 	int digit;
 	int i;
@@ -25,5 +25,5 @@ int main()
 			repeated_digits[i] = 0;
 		}
 	}
-  return 0;
+	return 0;
 }
