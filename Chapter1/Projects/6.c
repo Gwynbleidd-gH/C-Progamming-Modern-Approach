@@ -35,6 +35,6 @@ int main()
 				printf("%c", message[i]);
 		}
 	}
-  printf("!!!!!!!!!!\n");
-  return 0;
+	printf("!!!!!!!!!!\n");
+	return 0;
 }
