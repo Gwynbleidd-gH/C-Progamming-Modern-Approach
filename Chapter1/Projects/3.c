@@ -10,7 +10,7 @@ int main()
 
 	while (true) {
 		printf("Enter a number: ");
-		scanf_s("%d", &number);
+		scanf_s("%ld", &number);
 		if (number <= 0)
 			break;
 		while (number > 0) {
