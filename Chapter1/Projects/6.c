@@ -2,7 +2,7 @@
 
 int main()
 {
-  #define MESSAGE_MAX_LEN 100
+#define MESSAGE_MAX_LEN 100
 	char message[MESSAGE_MAX_LEN];
 	int i;
 	
