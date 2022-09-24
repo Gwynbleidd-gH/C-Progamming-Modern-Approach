@@ -4,7 +4,7 @@
 int main()
 {
 	int repeated_digits[10] = { 0 };
-	int number;
+	long number;
 	int digit;
 	int i;
 
