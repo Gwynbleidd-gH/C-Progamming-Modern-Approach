@@ -5,7 +5,7 @@
 
 int main(void)
 {
-  #define N 10
+#define N 10
 	char board[N][N];
 	char letter = 'A';
 	int random_num;
@@ -18,18 +18,18 @@ int main(void)
 	bool right_blocked = false;
 	bool moved = false;
 
+	srand((unsigned int)time(NULL));
+
 	/* fills the board with dots . */
 	for (i = 0; i < N; i++)
 		for (j = 0; j < N; j++)
 			board[i][j] = '.';
-	srand(time(NULL));
-
 	board[0][0] = letter++;
 	while (letter <= 'Z') {
 		random_num = rand() % 4;
 		switch (random_num) {
 		case 0:
-			if ((!up_blocked && row > 0) && board[row - 1][col] == '.') {
+			if (row - 1 >= 0 && board[row - 1][col] == '.') {
 				board[--row][col] = letter++;
 				moved = true;
 			}
@@ -37,7 +37,7 @@ int main(void)
 				up_blocked = true;
 			break;
 		case 1:
-			if ((!down_blocked && row < N - 1) && board[row + 1][col] == '.') {
+			if (row + 1 < N && board[row + 1][col] == '.') {
 				board[++row][col] = letter++;
 				moved = true;
 			}
@@ -45,7 +45,7 @@ int main(void)
 				down_blocked = true;
 			break;
 		case 2:
-			if ((!left_blocked && col > 0) && board[row][col - 1] == '.') {
+			if (col - 1 >= 0 && board[row][col - 1] == '.') {
 				board[row][--col] = letter++;
 				moved = true;
 			}
@@ -53,7 +53,7 @@ int main(void)
 				left_blocked = true;
 			break;
 		case 3:
-			if ((!right_blocked && col < N - 1) && board[row][col + 1] == '.') {
+			if (col + 1 < N && board[row][col + 1] == '.') {
 				board[row][++col] = letter++;
 				moved = true;
 			}
