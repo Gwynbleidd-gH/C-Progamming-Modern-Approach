@@ -17,7 +17,7 @@ int main(void)
         number /= 10;
         ++digit_seen[digit];
     }
-    printf("Repeated digits: ");
+    printf("Repeated digit(s):");
     for (i = 0; i < 10; i++)
         if (digit_seen[i] >= 2)
             printf(" %d", i);
