@@ -8,6 +8,40 @@ char stack[STACK_MAX_SIZE];
 
 int top = 0;
 
+bool is_full(void);
+
+bool is_empty(void);
+
+void push(char ch);
+
+char pop(void);
+
+int main(void)
+{
+    int ch;
+
+    printf("Enter parentheses and/or braces: ");
+    while ((ch = getchar()) != '\n') {
+        if ((ch == ')' || ch == '}') && is_empty()) {
+            push(ch);
+            break;
+        }
+        else if (ch == '(' || ch == '{')
+            push(ch);
+        else if (ch == ')' && pop() != '(')
+            break;
+        else if (ch == '}' && pop() != '{')
+            break;
+    }
+
+    if (is_empty())
+        printf("Parentheses/braces are nested properly\n");
+    else
+        printf("Parentheses/braces are not nested properly\n");
+    
+    return 0;
+}
+
 bool is_full(void)
 {
     return top == STACK_MAX_SIZE;
@@ -39,30 +73,3 @@ char pop(void)
         return stack[--top];
     }
 }
-
-int main(void)
-{
-    int ch;
-
-    printf("Enter parentheses and/or braces: ");
-    while ((ch = getchar()) != '\n') {
-        if ((ch == ')' || ch == '}') && is_empty()) {
-            push(ch);
-            break;
-        }
-        else if (ch == '(' || ch == '{')
-            push(ch);
-        else if (ch == ')' && pop() != '(')
-            break;
-        else if (ch == '}' && pop() != '{')
-            break;
-    }
-
-    if (is_empty())
-        printf("Parentheses/braces are nested properly\n");
-    else
-        printf("Parentheses/braces are not nested properly\n");
-    
-    return 0;
-}
-  
