@@ -28,15 +28,11 @@ bool palindrome(char str[])
     int i = 0, j = strlen(str) - 1;
 
     while (i < j) {
-        if (!isalpha(str[i])) {
+        if (!isalpha(str[i]))
             i++;
-            continue;
-        }
-        if (!isalpha(str[j])) {
+        else if (!isalpha(str[j]))
             j--;
-            continue;
-        }
-        if (toupper(str[i]) == toupper(str[j])) {
+        else if (toupper(str[i]) == toupper(str[j])) {
             i++;
             j--;
         }
