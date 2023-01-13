@@ -4,6 +4,8 @@
 #include <string.h>
 #include <ctype.h>
 
+#define MAX_LEN 100
+
 bool palindrome(char str[]);
 
 int main(void)
